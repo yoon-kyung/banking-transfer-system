@@ -1,4 +1,4 @@
 package com.bank.bankingtransfersystem.adapter.in.web.dto;
 
-public class UserLoginRequest {
+public record UserLoginRequest(String email, String password) {
 }
