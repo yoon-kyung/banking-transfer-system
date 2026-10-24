@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: banking-transfer-api
+  profiles:
+    active: local
+
+server:
+  port: 8080
+  shutdown: graceful
