@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BankingApplication {
 
     public static void main(String[] args) {
-        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"));    // bank application 시간을 kst로 통일
+        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul")); // bank application 시간을 kst로 통일
         SpringApplication.run(BankingApplication.class, args);
     }
 }

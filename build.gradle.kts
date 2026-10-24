@@ -1,8 +1,9 @@
 import io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 plugins {
     java
-    id("org.springframework.boot") version "3.5.5" apply false
+    id("org.springframework.boot") version "4.1.2" apply false
     id("io.spring.dependency-management") version "1.1.7" apply false
     id("com.diffplug.spotless") version "7.2.1" apply false
 }
@@ -28,10 +29,10 @@ subprojects {
         }
     }
 
-    // Spring Boot BOM: 라이브러리 버전을 Spring Boot 3.5.5에 맞춰 자동으로 지정
+    // Spring Boot BOM: 라이브러리 버전을 위 plugins의 Spring Boot 버전에 맞춰 자동으로 지정
     configure<DependencyManagementExtension> {
         imports {
-            mavenBom("org.springframework.boot:spring-boot-dependencies:3.5.5")
+            mavenBom(SpringBootPlugin.BOM_COORDINATES)
         }
     }
 
