@@ -81,11 +81,9 @@ graph TD
     Consumer --> Mock["알림 이력 저장<br/>(NOTIFICATION 테이블 INSERT + 로그 출력)"]
  
     subgraph Monitoring
-        Prom["Prometheus"]
-        Grafana["Grafana Dashboard"]
-        Prom -->|"Scrape"| Service
-        Grafana -->|"Query"| Prom
+        Prom["Prometheus"] --> Grafana["Grafana Dashboard"]
     end
+    Service -.metrics.-> Prom
 ```
 
 ## 동시성 제어 - Redis 분산락
